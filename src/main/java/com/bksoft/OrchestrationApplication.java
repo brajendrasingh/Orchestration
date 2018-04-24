@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.client.RestTemplate;
 
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
@@ -23,6 +24,11 @@ public class OrchestrationApplication {
 		SpringApplication.run(OrchestrationApplication.class, args);
 	}
 	
+	@Bean
+	RestTemplate restTemplate() {
+		return new RestTemplate();
+	}
+
 	@Bean
 	public Docket swaggerPlugin() {
 		  return new Docket(DocumentationType.SWAGGER_2)          
