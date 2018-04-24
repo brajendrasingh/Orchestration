@@ -4,6 +4,7 @@
 package com.bksoft.api.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.bksoft.model.Student;
+import com.bksoft.business.StudentService;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -26,11 +28,14 @@ import io.swagger.annotations.ApiResponses;
 @Controller
 public class StudentApiController {
 
+	@Autowired
+	private StudentService studentService;
+	
 	@ApiOperation(value = "Fetch  Student's details", notes = "Gets Student's details in JSON format")
 	@RequestMapping(value = "studentList")
 	public ResponseEntity<Student> getStudentList() throws Exception {
 
-		Student student = new Student();
+		Student student = studentService.getStudent();
 
 		return new ResponseEntity<>(student, HttpStatus.OK);
 	}
