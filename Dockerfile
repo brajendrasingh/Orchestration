@@ -1,5 +1,7 @@
 FROM java:8  
-COPY . /var/www/java  
-WORKDIR /var/www/java  
-RUN javac Orchestration.jar  
-CMD ["java", "-jar", "Orchestration"] 
+MAINTAINER brajendra
+COPY ../target/*.jar .  
+WORKDIR / 
+ADD orchestration.jar orchestration.jar  
+EXPOSE 8080
+CMD ["java","-jar","orchestration.jar"]
