@@ -43,11 +43,11 @@ public class OrchestrationApplication {
 	        return new ApiInfoBuilder()
 	            .title("Orchestration Application")
 	            .description("Orchestration Application For Webservices")
-	            .contact(new Contact("Brajendra", "www.bksoft.com", "brajendrasingh@gmail.com"))
+	            .contact(new Contact("Brajendra", "www.http://bksoft.com", "brajendrasingh@gmail.com"))
 	            .license("Apna License Version")
 	            .licenseUrl("https://LICENSE")
 	            .version("2.0")
 	            .build();
-	    }
+	 }
 
 }

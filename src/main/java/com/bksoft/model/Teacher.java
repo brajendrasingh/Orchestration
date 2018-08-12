@@ -3,21 +3,29 @@
  */
 package com.bksoft.model;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 /**
  * @author BRAJENDRA SINGH
  *
  */
+@ApiModel(value = "Teacher" , description = "Prototype for Teacher Model")
 public class Teacher {
 
-	private String id;
+	@ApiModelProperty(position = 1, dataType = "java.lang.Integer", required = true)
+	private int id;
+
 	private String name;
+	
+	@ApiModelProperty(position = 2, dataType = "java.lang.String", required = true)
 	private String mobile;
 
 	public Teacher() {
 
 	}
 
-	public Teacher(String id, String name, String mobile) {
+	public Teacher(int id, String name, String mobile) {
 		this.id = id;
 		this.name = name;
 		this.mobile = mobile;
@@ -31,11 +39,11 @@ public class Teacher {
 		this.mobile = mobile;
 	}
 
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
